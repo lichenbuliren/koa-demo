@@ -1,30 +1,15 @@
 var koa = require('koa');
+var routers = require('./routers');
+var bodyParser = require('koa-bodyparser');
+var logger = require('koa-logger');
+var staticServer = require('koa-static');
+var path = require('path');
 var app = koa();
 
-// x-response-time
-
-app.use(function*(next) {
-    var start = new Date;
-    yield next;
-    var ms = new Date - start;
-    this.set('X-Response-Time', ms + 'ms');
-});
-
-// logger
-
-app.use(function*(next) {
-    var start = new Date;
-    yield next;
-    var ms = new Date - start;
-    console.log('%s %s - %s', this.method, this.url, ms);
-});
-
-// response
-
-app.use(function*() {
-    console.dir(this.host);
-    this.body = 'Hello World';
-});
-
+app.use(logger());
+app.use(staticServer(path.join(__dirname, 'public')));
+app.use(bodyParser());
+// 自定义路由
+routers(app);
 
 app.listen(3000);

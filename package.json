@@ -4,5 +4,19 @@
   "description": "koa study",
   "devDependencies": {
     "koa": "^0.20.0"
+  },
+  "dependencies": {
+    "co-views": "^0.3.0",
+    "ejs": "^2.3.1",
+    "koa-bodyparser": "^2.0.0",
+    "koa-logger": "^1.2.2",
+    "koa-router": "^5.0.1",
+    "koa-static": "^1.4.9",
+    "koa-views": "^3.0.0",
+    "mongodb": "^2.0.33",
+    "mongoose": "^4.0.3"
+  },
+  "scripts": {
+    "start": "nodemon --harmony app.js"
   }
 }

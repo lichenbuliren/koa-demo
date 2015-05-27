@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function startTime() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = m < 10? '0'+m:m;
+            s = s < 10? '0'+s:s;
+            document.getElementById('txt').innerHTML = h + ':' + m + ':' + s;
+            t = setTimeout('startTime()', 100);
+
+            var x = window.innerHeight;
+            var c = window.innerWidth;
+            document.getElementById('tt').innerHTML = "dfghfdjghdu"
+        }
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = '0' + i;
+            }
+            return i;
+        }
+    </script>
+</head>
+<body onload="startTime()">
+    <div id="txt"></div>
+    <div id="tt"></div>
+</body>
+</html>
