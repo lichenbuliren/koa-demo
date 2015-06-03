@@ -12,7 +12,6 @@
     "koa-logger": "^1.2.2",
     "koa-router": "^5.0.1",
     "koa-static": "^1.4.9",
-    "koa-views": "^3.0.0",
     "mongodb": "^2.0.33",
     "mongoose": "^4.0.3"
   },
